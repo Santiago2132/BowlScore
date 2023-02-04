@@ -1,5 +1,5 @@
 public class JuegoBolos{
-    
+
     public static void main(String[] args) {
 		Scanner sc= new Scanner(System.in);
 		System.out.println("Tablero de Bolos");
@@ -21,7 +21,7 @@ public class JuegoBolos{
 					total=lanza1+lanza2;
 					}while(total>10);
 			}
-			
+			System.out.println();
 		}
 		
 	}

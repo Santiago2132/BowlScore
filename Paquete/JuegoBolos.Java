@@ -62,18 +62,23 @@ public class JuegoBolos{
 				}
 
 				//aqui guardara el resultado de los lanzamientos en j=3
-					if(ready==false) {
-						tableroBolos[i][j]=tableroBolos[i][1]+tableroBolos[i][2];//suma los lanzamientos
-						puntaje=puntaje+tableroBolos[i][j];//va sumando el puntaje
-						if(tableroBolos[i][j]==10) {//si la suma de los lanzamientos da 10- Proceso de stricke
-							puntaje= puntaje + tableroBolos[i+1][1]; //se supone que aqui dbe sumar la siguiente
-						}	
-					}
-					tableroBolos[i][j]= puntaje;//se guarda el puntaje de ese turno					
-					}
-					
+				if(ready==false) {
+					tableroBolos[i][j]=tableroBolos[i][1]+tableroBolos[i][2];//suma los lanzamientos
+					puntaje=puntaje+tableroBolos[i][j];//va sumando el puntaje
+					if(tableroBolos[i][j]==10) {//si la suma de los lanzamientos da 10- Proceso de stricke
+					   if(tableroBolos[i+1][1]>0) {
+						puntaje= puntaje + tableroBolos[i+1][1]; //se supone que aqui dbe sumar la siguiente
+						}
+					   else {
+						   puntaje= puntaje + tableroBolos[i+1][2]; 
+					   }
 				}
+				//se guarda el puntaje de ese turno					
+				}
+				tableroBolos[i][j]= puntaje;
 			}
+		}
+	}
 		
 		for (int i = 1; i <=10; i++) {
 			for (int j = 1; j <=3; j++) {

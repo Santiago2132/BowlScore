@@ -73,6 +73,7 @@ public class JuegoBolos{
 						   puntaje= puntaje + tableroBolos[i+1][2]; 
 					   }
 				}
+				//besossss
 				//se guarda el puntaje de ese turno					
 				}
 				tableroBolos[i][j]= puntaje;

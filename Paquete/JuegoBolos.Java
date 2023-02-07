@@ -1,6 +1,6 @@
 public class JuegoBolos{
 
-public static void main(String[] args) {
+	public static void main(String[] args) {
 		
 		Scanner sc= new Scanner(System.in);
 		System.out.println("Tablero de Bolos");
@@ -88,6 +88,13 @@ public static void main(String[] args) {
 						tableroBolos[i][j]=tableroBolos[i][1]+tableroBolos[i][2]+tableroBolos[i][1]+tableroBolos[i+1][1]+tableroBolos[i+1][2];
 						puntaje=puntaje+tableroBolos[i][j];
 						ready = true;
+						
+						if(tableroBolos[i+1][1]==0 && tableroBolos[i+2][1]==0) {
+							puntaje=puntaje+tableroBolos[i+2][2];
+						}
+						if(tableroBolos[i+1][1]==0) {
+							puntaje=puntaje+tableroBolos[i+2][1];
+						}
 					}
 					
 

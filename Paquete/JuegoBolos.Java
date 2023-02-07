@@ -1,6 +1,7 @@
 public class JuegoBolos{
 
-    public static void main(String[] args) {
+	public static void main(String[] args) {
+		
 		Scanner sc= new Scanner(System.in);
 		System.out.println("Tablero de Bolos");
 		int puntaje=0;
@@ -37,18 +38,41 @@ public class JuegoBolos{
 					}
 						
 				}
-				//aqui guardara el resultado de los lanzamientos en j=3
+				if (j == 3)//inicializa el resultado
+                {
+                    tableroBolos[i][j] = 0;
+                }
+			}
+		}
+		for (int i = 1; i <=10; i++) {
+			for (int j = 1; j <=3; j++) {
+				boolean ready=false;
 				if(j==3) {
+					//chuza
+				 if((tableroBolos[i][1]==10)||(tableroBolos[i][2]==10))
+                 {
+                     tableroBolos[i][j]=10+tableroBolos[i+1][1]+tableroBolos[i+1][2];
+                     puntaje=puntaje+tableroBolos[i][j];
+                     ready = true;
+                 }
+				 /*
+                 if(tableroBolos[i][2]==10)
+                 {
+                     tableroBolos[i][3]=tableroBolos[i][2]+tableroBolos[i+1][1]+tableroBolos[i+1][2];
+                     puntaje=puntaje+tableroBolos[i][j];
+                     ready = true;
+                 }
+                 */
+
+				//aqui guardara el resultado de los lanzamientos en j=3
+					if(ready==false) {
 						tableroBolos[i][j]=tableroBolos[i][1]+tableroBolos[i][2];//suma los lanzamientos
 						puntaje=puntaje+tableroBolos[i][j];//va sumando el puntaje
-						//System.out.println(puntaje);
-						
-						//revisar esto - no funciona
 						if(tableroBolos[i][j]==10) {//si la suma de los lanzamientos da 10- Proceso de stricke
 							puntaje= puntaje + tableroBolos[i+1][1]; //se supone que aqui dbe sumar la siguiente
-						}
-						tableroBolos[i][j]= puntaje;
-						System.out.println(tableroBolos[i][j]);					
+						}	
+					}
+					tableroBolos[i][j]= puntaje;//se guarda el puntaje de ese turno					
 					}
 					
 				}
@@ -60,6 +84,6 @@ public class JuegoBolos{
 			}
 			System.out.println();
 		}
-		
+
 	}
 }

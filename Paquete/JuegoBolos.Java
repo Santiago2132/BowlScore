@@ -49,20 +49,17 @@ public class JuegoBolos{
 				boolean ready=false;
 				if(j==3) {
 					//chuza
-				 if((tableroBolos[i][1]==10)||(tableroBolos[i][2]==10))
-                 {
-                     tableroBolos[i][j]=10+tableroBolos[i+1][1]+tableroBolos[i+1][2];
-                     puntaje=puntaje+tableroBolos[i][j];
-                     ready = true;
-                 }
-				 /*
-                 if(tableroBolos[i][2]==10)
-                 {
-                     tableroBolos[i][3]=tableroBolos[i][2]+tableroBolos[i+1][1]+tableroBolos[i+1][2];
-                     puntaje=puntaje+tableroBolos[i][j];
-                     ready = true;
-                 }
-                 */
+				if((tableroBolos[i][1]==10)||(tableroBolos[i][2]==10))
+				{
+					tableroBolos[i][j]=10+tableroBolos[i+1][1]+tableroBolos[i+1][2];
+					puntaje=puntaje+tableroBolos[i][j];
+					if(i>1)
+                        {
+                            int anterior = i -1;
+                            tableroBolos[anterior][3]=tableroBolos[anterior][3]+10;
+                        }
+					ready = true;
+				}
 
 				//aqui guardara el resultado de los lanzamientos en j=3
 					if(ready==false) {

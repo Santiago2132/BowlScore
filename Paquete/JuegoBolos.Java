@@ -37,32 +37,39 @@ public static void main(String[] args) {
 								}
 						
 						}	
+					
+					if(i==10 && j==2) {
+							//int MaxTiro2=10-tempo;
+						if(tempo!=10 ) {
+							do {
+								System.out.println("Lanzamiento N° "+ j+ ": " );
+								lanza1=sc.nextInt();
+								//tempo=lanza1;
+								}while(lanza1>10); //se verifica que no supere los 10 puntos posibles por turno
+								
+								tableroBolos[i][2]=lanza1;
+								//System.out.println("Lanzamiento 2 es"+ tableroBolos[i][j]);
+								}
+						if(tempo==10 || (lanza1+tempo==10)) {
+							do {
+								System.out.println("Lanzamiento N° "+ j+ ": " );
+								lanza1=sc.nextInt();
+								//tempo=lanza1;
+								}while(lanza1>10); //se verifica que no supere los 10 puntos posibles por turno
+								
+								tableroBolos[i][2]=lanza1;
 						
-				}
-				if(i==10 && j==2) {
-					if(tempo==10) {
-						//int MaxTiro2=10-tempo;
-						do {
-							System.out.println("Lanzamiento N° "+ j+ ": " );
-							lanza1=sc.nextInt();
-							//tempo=lanza1;
-							}while(lanza1>10); //se verifica que no supere los 10 puntos posibles por turno
-							
-							tableroBolos[i][2]=lanza1;
-							//System.out.println("Lanzamiento 2 es"+ tableroBolos[i][j]);
-							}
-			
-					if(tempo==10 || (lanza1+tempo==10)) {
-						do {
-							System.out.println("Lanzamiento N° "+ 3+ ": " );
-							lanza1=sc.nextInt();
-							//tempo=lanza1;
-							}while(lanza1>10); 
-						 tableroBolos[i][3] = lanza1;
+							do {
+								System.out.println("Lanzamiento N° "+ 3+ ": " );
+								lanza1=sc.nextInt();
+								//tempo=lanza1;
+								}while(lanza1>10); 
+							 tableroBolos[i][3] = lanza1;
+						}
 					}
-					puntajeT10=	tempo+tableroBolos[10][2]+ tableroBolos[10][3];
-				}
-				
+						puntajeT10=	tempo+tableroBolos[10][2]+ tableroBolos[10][3];
+					}
+
 				if (j == 3 && i!=10)//inicializa el resultado
                 {
                     tableroBolos[i][j] = 0;
@@ -70,7 +77,7 @@ public static void main(String[] args) {
 			}
 		}
 		for (int i = 1; i <=10; i++) {
-			for (int j = 1; j <=3; j++) {
+			for (int j = 1; j <=4; j++) {
 				
 				if(j!=4) {
 					boolean ready=false;
@@ -109,12 +116,19 @@ public static void main(String[] args) {
 			}
 		}
 
-		for (int i = 1; i <=10; i++) {
+		for (int i = 1; i <=9; i++) {
 			for (int j = 1; j <=3; j++) {
 				System.out.print("|"+tableroBolos[i][j]+"|");
 			}
 			System.out.println();
 		}
+		for (int i = 10; i <=10; i++) {
+			for (int j = 1; j <=4; j++) {
+				System.out.print("|"+tableroBolos[i][j]+"|");
+			}
+			System.out.println();
+		}
+		//System.out.print("|"+tableroBolos[10][4]+ "|");
 
 	}
 }

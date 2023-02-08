@@ -1,7 +1,7 @@
 public class JuegoBolos{
 	//JUEGO DE BOLOS- KAREN Y SANTIAGO :)
-	public static void main(String[] args) {
-		
+	public static void main(String[] args)
+	{		
 		Scanner sc= new Scanner(System.in);
 		System.out.println("Tablero de Bolos");
 		int puntaje=0;  int puntajeT10=0;

@@ -1,6 +1,5 @@
 public class JuegoBolos{
 	//JUEGO DE BOLOS- KAREN Y SANTIAGO :)
-
 	public static void main(String[] args) {
 		
 		Scanner sc= new Scanner(System.in);

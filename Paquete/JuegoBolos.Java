@@ -64,7 +64,7 @@ public class JuegoBolos{
 								
 								//tempo=lanza1;
 								}while(lanza1>MaxTiro); 
-							 tableroBolos[i][3] = lanza1;// seguarda en la casilla 3
+							tableroBolos[i][3] = lanza1;// seguarda en la casilla 3
 						}
 					}
 						puntajeT10=	tempo+tableroBolos[10][2]+ tableroBolos[10][3];// acumulador para el turno 10
@@ -103,12 +103,12 @@ public class JuegoBolos{
 							tableroBolos[i][j]=tableroBolos[i][1]+tableroBolos[i][2];//suma los lanzamientos
 							puntaje=puntaje+tableroBolos[i][j];//va sumando el puntaje
 							if(tableroBolos[i][j]==10) {//si la suma de los lanzamientos da 10- Proceso de stricke
-							   if(tableroBolos[i+1][1]>0) {
+								if(tableroBolos[i+1][1]>0) {
 								puntaje= puntaje + tableroBolos[i+1][1]; //se supone que aqui dbe sumar la siguiente
 								}
-							   else {
-								   puntaje= puntaje + tableroBolos[i+1][2]; 
-							   }
+								else {
+									puntaje= puntaje + tableroBolos[i+1][2]; 
+								}
 						}
 						//se guarda el puntaje de ese turno					
 						}
@@ -116,8 +116,8 @@ public class JuegoBolos{
 					}
 				}
 			if(j==4&&i==10){ // si j es 4 e i es 10 ese será el resulado de el tuno 10
-					 puntaje=puntaje+puntajeT10;
-					 tableroBolos[i][j]= puntaje;//se guardar en casilla 4 turno 10
+					puntaje=puntaje+puntajeT10;
+					tableroBolos[i][j]= puntaje;//se guardar en casilla 4 turno 10
 				}
 				
 			}

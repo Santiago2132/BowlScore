@@ -1,4 +1,5 @@
 public class JuegoBolos{
+	//JUEGO DE BOLOS- KAREN Y SANTIAGO :)
 
 	public static void main(String[] args) {
 		
@@ -24,7 +25,7 @@ public class JuegoBolos{
 								tableroBolos[i][j]=lanza1;
 								//System.out.println("Lanzamiento 1 es"+ tableroBolos[i][j]);
 						}
-						if(j==2) {// para que al ingresar segundo lanzamiento no pase de 10 y no este en turno 10
+						if(j==2 && i!=10) {// para que al ingresar segundo lanzamiento no pase de 10 y no este en turno 10
 							int MaxTiro=10-tempo;
 							do {
 								System.out.println("Lanzamiento N° "+ j+ ": " );
@@ -40,13 +41,29 @@ public class JuegoBolos{
 					
 					if(i==10 && j==2) {// en turno 10 y segundo lanzamiento
 						
-					if(tempo==10 || (lanza1+tempo==10)) {
+						do {
+							System.out.println("Lanzamiento N° "+ j+ ": " );
+							lanza1=sc.nextInt();
+							lanza2=lanza1;
+							//tempo=lanza1;
+							}while(lanza1>10); //se verifica que no supere los 10 puntos posibles por turno
+							
+							tableroBolos[i][2]=lanza1;
+					if(tempo==10 || (lanza2+tempo==10)) {
 						
+							int MaxTiro=0;
 							do {
+								if(lanza2!=10) {
+									MaxTiro=10-lanza2;
+								}
+								else {
+									MaxTiro=10;
+								}
 								System.out.println("Lanzamiento N° "+ 3+ ": " );
 								lanza1=sc.nextInt();
+								
 								//tempo=lanza1;
-								}while(lanza1>10); 
+								}while(lanza1>MaxTiro); 
 							 tableroBolos[i][3] = lanza1;// seguarda en la casilla 3
 						}
 					}
